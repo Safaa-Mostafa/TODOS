@@ -7,12 +7,6 @@ This is a simple To-Do List application built using Angular, Angular Material, a
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
-- [Running the Application](#running-the-application)
-- [Project Structure](#project-structure)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Features
 
 - **Add Task:** Users can create new tasks with details such as title, description, due date, and priority.
