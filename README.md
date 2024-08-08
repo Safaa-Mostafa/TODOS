@@ -1,31 +1,34 @@
-# ToDos
+# To-Do List Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
+This is a simple To-Do List application built using Angular, Angular Material, and JSON Server. The application allows users to manage their tasks by adding, editing, and deleting them, with data persisted using JSON Server.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Running the Application](#running-the-application)
+- [Project Structure](#project-structure)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Add Task:** Users can create new tasks with details such as title, description, due date, and priority.
+- **Edit Task:** Users can modify existing tasks to update their details.
+- **Delete Task:** Users can delete tasks they no longer need.
 
-## Build
+## Technologies Used
+
+- **Frontend:**
+  - Angular
+  - Angular Material
+  - Angular Reactive Forms
+- **Backend:**
+  - JSON Server
+
+https://github.com/user-attachments/assets/54dd6982-0f81-442e-8d6c-436927f99dad
 
 
-https://github.com/user-attachments/assets/f8cd7ca9-909f-4c3f-b02f-9c80f3365368
 
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
