@@ -1,0 +1,11 @@
+.navbar{
+  background-color: #3f51b5;
+}
+.navbar .app-title,
+.navbar a {
+  color: white ;
+}
+
+.navbar .spacer {
+  flex: 1 1 auto;
+}

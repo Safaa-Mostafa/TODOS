@@ -1,0 +1,91 @@
+
+
+<section>
+  <div class="example-button-row">
+    <button (click)="openDialog()" mat-raised-button>Add New Task</button>
+  </div>
+</section>
+
+
+@if(dataSource.length > 0 ){
+<div class="container">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="select">
+    <th mat-header-cell *matHeaderCellDef>
+      <mat-checkbox (change)="$event ? masterToggle() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()"
+                    [aria-label]="checkboxLabel()">
+      </mat-checkbox>
+    </th>
+    <td mat-cell *matCellDef="let row">
+      <mat-checkbox (click)="$event.stopPropagation()"
+                    (change)="$event ? selection.toggle(row) : null"
+                    [checked]="selection.isSelected(row)"
+                    [aria-label]="checkboxLabel(row)">
+      </mat-checkbox>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="no">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element;let i=index"> {{i+1}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="TaskName">
+    <th mat-header-cell *matHeaderCellDef> Task Title </th>
+    <td mat-cell *matCellDef="let element"> {{element.TaskName}} </td>
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef> description </th>
+    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Priority">
+    <th mat-header-cell *matHeaderCellDef> Priority </th>
+    <td mat-cell *matCellDef="let element"> {{element.Priority}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef> status </th>
+    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="dueDate">
+    <th mat-header-cell *matHeaderCellDef> date </th>
+
+    <td mat-cell *matCellDef="let element"> {{element.dueDate | date:'yyyy-MM-dd'}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef style="text-align:center"> Actions </th>
+    <td mat-cell *matCellDef="let element" style="text-align:center">
+      <button mat-button (click)="updateDialog(element.id)">Update</button>
+      <button mat-button (click)="deleteTask(element.id)">Delete</button>
+    </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+      (click)="selection.toggle(row)">
+  </tr>
+
+</table>
+</div>
+}
+@if(dataSource.length == 0){
+  <div class="flex justify-center items-center h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md text-center">
+      <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+      <h3 class="text-gray-800 font-medium text-lg mt-4">No Data Available</h3>
+      <p class="text-gray-600 mt-2">It looks like there is no data to display at the moment.</p>
+    </div>
+  </div>
+}
