@@ -12,6 +12,10 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
+
+https://github.com/user-attachments/assets/f8cd7ca9-909f-4c3f-b02f-9c80f3365368
+
+
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Running unit tests
